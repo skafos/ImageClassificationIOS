@@ -1,0 +1,20 @@
+PODS:
+  - Skafos (3.0.0)
+  - SnapKit (5.0.0)
+
+DEPENDENCIES:
+  - Skafos (= 3.0.0)
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Skafos
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Skafos: 28a2168cd307c8e4ba53500e6a95229bda377afb
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+
+PODFILE CHECKSUM: 0f56eee4d39cbc8da8b6b3a2e5ed742d11388425
+
+COCOAPODS: 1.6.1
