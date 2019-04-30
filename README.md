@@ -1,6 +1,6 @@
-<h1 align="center">ImageClassification by <a href="https://skafos.ai">Skafos</a></h1>
+<h1 align="center">ImageClassificationIOS by <a href="https://skafos.ai">Skafos</a></h1>
 
-ImageClassification is an example app that uses the Skafos platform for CoreML model integration and delivery. It's a good starting point for diving in, or a good reference for integrating Skafos in to your own app. Skafos is a platform that streamlines CoreML model updates without needing to submit a new version to the app store everytime a new model is ready for use.
+ImageClassificationIOS is an example iOS app that uses the Skafos platform for CoreML model integration and delivery. It's a good starting point for diving in, or a good reference for integrating Skafos in to your own app. Skafos is a platform that streamlines CoreML model updates without needing to submit a new version to the app store everytime a new model is ready for use.
 
 This ImageClassification example app specifically integrates and deploys an Image Classification machine learning model. [Image Classification](https://docs.metismachine.io/docs/image-classification) is a type of machine learning model that enables you to categorize images into groups, and identify new images as a member of one (or more) of these groups. The example model that is provided in this app will categorize any image as either a cat or a dog. For more details about how to use and customize this model please navigate to the [Skafos Turi Image Classifier repo on github](https://github.com/skafos/TuriImageClassifier).
 
