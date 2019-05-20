@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // You can find them under your App Settings tab @ https://dashboard.skafos.ai
     #if DEBUG
       // Use the DEV key if running in DEBUG mode
-      let key = "sk_dev_7bba17667d767a376447c25e29889221"
+      let key = "{your-dev-key}"
     #else
       // Use the PROD key otherwise
-      let key = "sk_prod_136be47ae8da48d726a339fdcad073ae"
+    let key = "{your-prod-key}"
     #endif
     
     // Initialize Skafos
