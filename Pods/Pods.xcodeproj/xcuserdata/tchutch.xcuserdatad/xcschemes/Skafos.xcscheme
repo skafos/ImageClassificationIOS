@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "445EA93CE48C6959D3758D14CF267994"
-               BuildableName = "Skafos"
+               BuildableName = "Skafos.framework"
                BlueprintName = "Skafos"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
