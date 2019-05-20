@@ -18,9 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window                     = UIWindow(frame: UIScreen.main.bounds)
     self.window?.rootViewController = MainViewController()
 
-    // Skafos publishable key is required
-    // You can find it under "app settings" in your project on the Skafos dashboard
-    Skafos.initialize("<PUBLISHABLE KEY>")
+    // Set Skafos environment keys
+    // You can find them under your App Settings tab @ https://dashboard.skafos.ai
+    #if DEBUG
+      // Use the DEV key if running in DEBUG mode
+      let key = "{your-dev-key}"
+    #else
+      // Use the PROD key otherwise
+      let key = "{your-prod-key}"
+    #endif
+    
+    // Initialize Skafos
+    Skafos.initialize(key)
 
     self.window?.makeKeyAndVisible()
     return true
@@ -46,31 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-  }
-  
-  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    Skafos.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-  }
-
-  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-    print("ERROR: \(error)")
-    Skafos.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
-  }
-
-  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    Skafos.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-  }
-
-  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-    Skafos.application(application, didReceiveRemoteNotification: userInfo)
-  }
-
-  func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    Skafos.application(application, performFetchWithCompletionHandler: completionHandler)
-  }
-
-  func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-    Skafos.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
   }
 }
 
