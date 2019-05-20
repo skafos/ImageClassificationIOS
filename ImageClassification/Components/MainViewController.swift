@@ -28,8 +28,7 @@ class MainViewController : ViewController {
   // Check for model updates when UI view appears
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    // Skafos load cached asset
-    // If you pass in a tag, Skafos will make a network request to fetch the asset with that tag
+    // Skafos load
     Skafos.load(asset: self.modelName) { (error, asset) in
       // Log the asset in the console
       console.info(asset)
