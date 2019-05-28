@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let key = "{your-dev-key}"
     #else
       // Use the PROD key otherwise
-    let key = "{your-prod-key}"
+      let key = "{your-prod-key}"
     #endif
     
     // Initialize Skafos
