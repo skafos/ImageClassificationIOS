@@ -1,23 +1,20 @@
 PODS:
-  - Skafos (3.0.1)
+  - Skafos (4.0.1)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
-  - Skafos (from `../skafos_ios_internal`)
+  - Skafos
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Skafos
     - SnapKit
 
-EXTERNAL SOURCES:
-  Skafos:
-    :path: "../skafos_ios_internal"
-
 SPEC CHECKSUMS:
-  Skafos: 69604bb1577ec58171e6289549a8d4761a7ca748
+  Skafos: f5873b802ce21699cb2bdffe671b048be8f63e3c
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 6acc948e474c9e56ebfd4b2cb0168637f9e831dd
+PODFILE CHECKSUM: 09811058b13a629dbc9a3797ceed944962ea52ba
 
 COCOAPODS: 1.6.1

@@ -3,7 +3,7 @@
 //  ImageClassification
 //
 //  Created by Skafos.ai on 12/17/18.
-//  Copyright © 2019 Skafos. All rights reserved.
+//  Copyright © 2019 Skafos, LLC. All rights reserved.
 //
 
 import Foundation
