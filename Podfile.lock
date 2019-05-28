@@ -1,9 +1,9 @@
 PODS:
-  - Skafos (3.0.0)
+  - Skafos (4.0.1)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
-  - Skafos (= 3.0.0)
+  - Skafos
   - SnapKit
 
 SPEC REPOS:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  Skafos: 28a2168cd307c8e4ba53500e6a95229bda377afb
+  Skafos: f5873b802ce21699cb2bdffe671b048be8f63e3c
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 0f56eee4d39cbc8da8b6b3a2e5ed742d11388425
+PODFILE CHECKSUM: 09811058b13a629dbc9a3797ceed944962ea52ba
 
 COCOAPODS: 1.6.1

@@ -1,8 +1,6 @@
->
-> PLEASE NOTE: There are breaking changes with the release of 2.0. If continuing use of 1.x, please change your pod file to use: `pod 'Skafos', '1.0.1'` instead of `pod 'Skafos'`
->
-
-<h1 align="center">SKAFOS</h1>
+<h1 align="center">
+<img src="images/skafos_horizontal_on_white.png">
+</h1>
 
 <p align="center">
     <a href="#installation">Installation</a>
@@ -11,15 +9,31 @@
   • <a href="#questions">Questions?</a>
 </p>
 
-Skafos seeks to free you from the tedious tasks and unnecessary work to just try a machine learning models in your app. Why does it have to be so hard?!  Well it doesn't.  This guide will get you from zero to AI hero in no time - and once you are done with this guide, you will have an app that uses ML.  Where you take it from here is up to you, however we are here to help you every step of the way. 
+Skafos is the tool for deploying machine learning models to mobile apps and managing the same models in a production environment. Built to integrate with any of the major cloud providers, users can utilize AWS, Azure, Google, IBM or nearly any other computational environment to organize data and train models. Skafos then versions, manages, deploys, and monitors model versions running in your production application environments
 
 ---
 
 ## Installation
+
 1. Sign up for Skafos account at [Skafos](https://skafos.io)
 2. Create a ML project using Skafos dashboard at [Quickstart](http://dashboard.metismachine.io/quickstart/project)
 3. Configure your app to use Skafos, including enable background updates via push notifications.
-4. Add `pod 'skafos'` to your `Podfile` and `pod install`
+
+### CocoaPods
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. 
+To integrate Skafos into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```ruby
+pod 'skafos', '~> 4.0.0'
+```
+
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. 
+To integrate Skafos into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "skafos/ios" "4.0.0"
+```
 
 ---
 
@@ -36,54 +50,17 @@ Then configure the framework with your project token:
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   // ...
 
-  // Shorthand:
-  Skafos.initialize("your project token", swizzle: true, debug: true)
-
-  // Longhand:
-  // Skafos.initialize(
-  //   Config(
-  //      token: "your project token",
-  //      meta: ["Any meta data" : "you want"],
-  //      swizzle: (true or false),
-  //      isDev: (true or false)
-  //   ) 
-  // )
-
-  // ...
+  Skafos.initialize("your project token")
 
   return true
 }
 ```
 
-Add push notification handlers and then the Skafos push handlers
-> Note: If you set `swizzle` to `true` this is not needed.
-
-```swift
-
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-  Skafos.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-}
-
-func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-  Skafos.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
-}
-
-func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-  Skafos.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-}
-
-func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-  Skafos.application(application, didReceiveRemoteNotification: userInfo)
-}
-
-```
-
-
 Now you are all set to call Skafos and ask it to load your model.
 
 ```swift
 
-Skafos.load("your asset name", version: "Asset version") { (error, asset) in
+Skafos.load("your asset name") { (error, asset) in
   if let error = error {
     print("Oh man, an error: \(error)")
 
@@ -105,6 +82,24 @@ Skafos.load("your asset name", version: "Asset version") { (error, asset) in
 }
 
 ```
+
+
+>
+> Note: Swizzle is enabled by default, if you chose to disable swizzle, add `swizzle: false` to your initialize function and add the following to your app delegate:
+>
+
+```swift
+
+ func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    Skafos.application(application, performFetchWithCompletionHandler: completionHandler)
+  }
+
+  func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+    Skafos.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+  }
+
+```
+
 
 ## License
 

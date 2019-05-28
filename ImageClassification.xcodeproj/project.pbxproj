@@ -175,7 +175,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Skafos;
+				ORGANIZATIONNAME = "Skafos, LLC";
 				TargetAttributes = {
 					D7E6B0BF21C8418F0026C015 = {
 						CreatedOnToolsVersion = 10.1;

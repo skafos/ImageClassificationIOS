@@ -3,7 +3,7 @@
 //  ImageClassification
 //
 //  Created by Skafos.ai on 1/10/19.
-//  Copyright © 2018 Metis Machine, LLC. All rights reserved.
+//  Copyright © 2019 Skafos, LLC. All rights reserved.
 //
 
 import Foundation
