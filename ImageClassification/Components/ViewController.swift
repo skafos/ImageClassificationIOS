@@ -34,6 +34,27 @@ class ViewController: UIViewController {
     return label
   }()
   
+  lazy var reloadButton:UIButton = {
+    let button        = UIButton(type: .system)
+    button.backgroundColor = .white
+    
+    button.setTitle("Reload Model", for: .normal)
+    button.setTitleColor(.black, for: .normal)
+    button.setTitleColor(.gray, for: .highlighted)
+    button.titleLabel?.textAlignment = .left
+    
+    button.tintColor = UIColor.blue
+    button.layer.borderWidth = 2.0
+    button.layer.borderColor = UIColor.black.cgColor
+    
+    button.contentHorizontalAlignment = .left
+    button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
+    
+    self.view.addSubview(button)
+    return button
+  }()
+  
   lazy var photoButton:UIButton = {
     let button        = UIButton(type: .custom)
     button.backgroundColor = .white
@@ -101,8 +122,15 @@ class ViewController: UIViewController {
       make.height.equalTo(120)
     }
     
-    photoButton.snp.makeConstraints { (make) in
+    reloadButton.snp.makeConstraints { (make) in
       make.top.equalTo(about.snp.bottom).offset(50)
+      make.left.equalToSuperview().inset(10)
+      make.width.greaterThanOrEqualTo(130)
+      make.height.equalTo(50)
+    }
+    
+    photoButton.snp.makeConstraints { (make) in
+      make.top.equalTo(reloadButton.snp.bottom).offset(50)
       make.right.left.equalToSuperview().inset(10)
       make.height.equalTo(100)
     }

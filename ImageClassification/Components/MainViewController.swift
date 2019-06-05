@@ -23,12 +23,13 @@ class MainViewController : ViewController {
     super.viewDidLoad()
     self.photoButton.addTarget(self, action: #selector(photoAction(_:)), for: .touchUpInside)
     self.cameraButton.addTarget(self, action: #selector(cameraAction(_:)), for: .touchUpInside)
+    self.reloadButton.addTarget(self, action: #selector(loadModel(_:)), for: .touchUpInside)
+    self.loadModel()
   }
-
-  // Check for model updates when UI view appears
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    // Skafos load
+  
+  @objc
+  func loadModel(_ sender:Any? = nil) {
+    console.info("Loading Model...")
     Skafos.load(asset: self.modelName) { (error, asset) in
       // Log the asset in the console
       console.info(asset)
@@ -36,6 +37,7 @@ class MainViewController : ViewController {
         console.error("Skafos load error: \(String(describing: error))")
         return
       }
+      
       if let model = asset.model {
         // Assign the updated model
         self.imageClassifier.model = model
